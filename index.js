@@ -17,8 +17,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         // Generate a random filename using UUID
         const randomFilename = `${uuidv4()}-${req.file.originalname}`;
 
-        // Save the file to Vercel Blob
-        const blob = new Blob();
+        // this is for practicume purpose only
         const result = await put(randomFilename, req.file.buffer, {
             access: 'public',
             token: 'vercel_blob_rw_8A4OsMFXZe2CsEVc_A94jx00fw4KYiVAkwJIsWBDccJQM8h'
